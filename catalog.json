@@ -1,0 +1,67 @@
+{
+  "source": "https://github.com/CommonPaper",
+  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+  "description": "Catalog of standard legal document templates sourced from Common Paper. Each template lives in the templates/ directory and can be copied and modified under the CC BY 4.0 license.",
+  "templates": [
+    {
+      "name": "Mutual Non-Disclosure Agreement (Standard Terms)",
+      "description": "Standard Terms for a mutual NDA allowing each party to disclose and protect confidential information for a defined purpose. Sourced from the Common Paper Mutual-NDA repository.",
+      "filename": "Mutual-NDA.md"
+    },
+    {
+      "name": "Mutual Non-Disclosure Agreement (Cover Page)",
+      "description": "Fill-in Cover Page that incorporates the Mutual NDA Standard Terms by reference to complete an executed agreement. Sourced from the Common Paper Mutual-NDA repository.",
+      "filename": "Mutual-NDA-coverpage.md"
+    },
+    {
+      "name": "Cloud Service Agreement",
+      "description": "Standard terms governing access to and use of a cloud/SaaS service, including support, user accounts, fees, and data handling. Sourced from the Common Paper CSA repository.",
+      "filename": "CSA.md"
+    },
+    {
+      "name": "Design Partner Agreement",
+      "description": "Agreement for giving early design partners access to a product in exchange for feedback used to develop and improve the product. Sourced from the Common Paper Design-Partner-Agreement repository.",
+      "filename": "design-partner-agreement.md"
+    },
+    {
+      "name": "Service Level Agreement",
+      "description": "Standard terms defining uptime targets, availability calculations, and service credit remedies for a cloud service. Sourced from the Common Paper SLA repository.",
+      "filename": "sla.md"
+    },
+    {
+      "name": "Professional Services Agreement",
+      "description": "Standard terms for delivering professional services under statements of work, covering cooperation, change orders, and payment. Sourced from the Common Paper PSA repository.",
+      "filename": "psa.md"
+    },
+    {
+      "name": "Data Processing Agreement",
+      "description": "Terms addressing controller/processor relationships and the processing of personal data in compliance with data protection law. Sourced from the Common Paper DPA repository.",
+      "filename": "DPA.md"
+    },
+    {
+      "name": "Software License Agreement",
+      "description": "Standard terms licensing software for installation and use, including user accounts, feedback, usage data, and permitted uses. Sourced from the Common Paper Software-License-Agreement repository.",
+      "filename": "Software-License-Agreement.md"
+    },
+    {
+      "name": "Partnership Agreement",
+      "description": "Standard terms for a business partnership covering each party's obligations, feedback, payment, and taxes. Sourced from the Common Paper Partnership-Agreement repository.",
+      "filename": "Partnership-Agreement.md"
+    },
+    {
+      "name": "Pilot Agreement",
+      "description": "Terms granting a customer limited access to a product for evaluation purposes during a defined pilot period. Sourced from the Common Paper Pilot-Agreement repository.",
+      "filename": "Pilot-Agreement.md"
+    },
+    {
+      "name": "Business Associate Agreement",
+      "description": "HIPAA-oriented terms governing a business associate's use, disclosure, and safeguarding of protected health information (PHI). Sourced from the Common Paper BAA repository.",
+      "filename": "BAA.md"
+    },
+    {
+      "name": "AI Addendum",
+      "description": "Addendum supplementing an agreement to cover AI services, including input/output handling, usage restrictions, and model training. Sourced from the Common Paper AI-Addendum repository.",
+      "filename": "AI-Addendum.md"
+    }
+  ]
+}
