@@ -1,10 +1,4 @@
-import {
-  confidentialityText,
-  fill,
-  formatEffectiveDate,
-  mndaTermText,
-  standardTerms,
-} from "@/lib/document";
+import { coverPageFields, standardTerms } from "@/lib/document";
 import type { NdaData } from "@/lib/types";
 
 function CoverField({
@@ -45,19 +39,11 @@ export default function NdaDocument({ data }: { data: NdaData }) {
       </h2>
 
       <div className="mt-3">
-        <CoverField label="Purpose">{fill(data.purpose)}</CoverField>
-        <CoverField label="Effective Date">
-          {formatEffectiveDate(data.effectiveDate)}
-        </CoverField>
-        <CoverField label="MNDA Term">{mndaTermText(data)}</CoverField>
-        <CoverField label="Term of Confidentiality">
-          {confidentialityText(data)}
-        </CoverField>
-        <CoverField label="Governing Law">{fill(data.governingLaw)}</CoverField>
-        <CoverField label="Jurisdiction">{fill(data.jurisdiction)}</CoverField>
-        <CoverField label="MNDA Modifications">
-          {data.modifications.trim() || "None."}
-        </CoverField>
+        {coverPageFields(data).map((field) => (
+          <CoverField key={field.label} label={field.label}>
+            {field.value}
+          </CoverField>
+        ))}
       </div>
 
       <p className="mt-4">
@@ -68,13 +54,22 @@ export default function NdaDocument({ data }: { data: NdaData }) {
       <table className="mt-4 w-full border-collapse text-[12px]">
         <thead>
           <tr>
-            <th className="w-1/4 border border-slate-300 p-2 text-left font-semibold">
+            <th
+              scope="col"
+              className="w-1/4 border border-slate-300 p-2 text-left font-semibold"
+            >
               &nbsp;
             </th>
-            <th className="border border-slate-300 p-2 text-left font-semibold">
+            <th
+              scope="col"
+              className="border border-slate-300 p-2 text-left font-semibold"
+            >
               Party 1
             </th>
-            <th className="border border-slate-300 p-2 text-left font-semibold">
+            <th
+              scope="col"
+              className="border border-slate-300 p-2 text-left font-semibold"
+            >
               Party 2
             </th>
           </tr>
@@ -82,9 +77,12 @@ export default function NdaDocument({ data }: { data: NdaData }) {
         <tbody>
           {signatureRows.map(([label, a, b]) => (
             <tr key={label}>
-              <td className="border border-slate-300 p-2 font-semibold">
+              <th
+                scope="row"
+                className="border border-slate-300 p-2 text-left font-semibold"
+              >
                 {label}
-              </td>
+              </th>
               <td className="h-8 whitespace-pre-wrap border border-slate-300 p-2 align-top">
                 {a}
               </td>

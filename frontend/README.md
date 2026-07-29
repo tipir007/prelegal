@@ -31,6 +31,23 @@ npm run build
 npm start
 ```
 
+## Testing
+
+Automated tests use [Vitest](https://vitest.dev) + Testing Library:
+
+```bash
+npm test          # run once
+npm run test:watch
+```
+
+Coverage includes the pure document/markdown logic, each component, and a
+form → live-preview integration test. `src/lib/fidelity.test.ts` is a guardrail
+that diffs the embedded Standard Terms against the canonical
+`templates/Mutual-NDA.md` to catch any legal-text drift.
+
+For browser-only checks (real PDF output, cross-browser), follow
+[`MANUAL_TESTING.md`](./MANUAL_TESTING.md).
+
 ## How it works
 
 - `src/lib/document.ts` — derives the display text for each Cover Page field and

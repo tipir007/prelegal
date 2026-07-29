@@ -1,14 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DownloadBar from "@/components/DownloadBar";
 import NdaDocument from "@/components/NdaDocument";
 import NdaForm from "@/components/NdaForm";
-import { defaultNdaData } from "@/lib/defaults";
+import { defaultNdaData, todayISO } from "@/lib/defaults";
 import type { NdaData, Party } from "@/lib/types";
 
 export default function Home() {
   const [data, setData] = useState<NdaData>(defaultNdaData);
+
+  // Set the default Effective Date on the client so the value reflects the
+  // user's local "today" rather than a build-time date baked into static HTML.
+  useEffect(() => {
+    setData((prev) =>
+      prev.effectiveDate ? prev : { ...prev, effectiveDate: todayISO() },
+    );
+  }, []);
 
   const update = (patch: Partial<NdaData>) =>
     setData((prev) => ({ ...prev, ...patch }));
